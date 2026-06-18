@@ -1,7 +1,7 @@
 const StatsCards = () => {
   const stats = [
     {
-      number: "15-30%",
+      number: "до 25%",
       label: "комиссия с платежей",
     },
     {
