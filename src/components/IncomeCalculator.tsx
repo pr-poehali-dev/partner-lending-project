@@ -5,7 +5,10 @@ const IncomeCalculator = () => {
   const [clients, setClients] = useState([10]);
   const [averageCheck, setAverageCheck] = useState([3000]);
 
-  const monthlyIncome = Math.round(clients[0] * averageCheck[0] * 0.15);
+  const commissionRate = 0.15;
+  const monthlyIncome = Math.round(
+    clients[0] * averageCheck[0] * commissionRate,
+  );
   const yearlyIncome = monthlyIncome * 12;
   const twoYearIncome = Math.round(yearlyIncome * 1.5);
 
@@ -30,7 +33,7 @@ const IncomeCalculator = () => {
               <Slider
                 value={clients}
                 onValueChange={setClients}
-                max={100}
+                max={10000}
                 min={1}
                 step={1}
                 className="py-4"
@@ -54,6 +57,18 @@ const IncomeCalculator = () => {
                 step={500}
                 className="py-4"
               />
+            </div>
+
+            <div className="flex items-center justify-center gap-3 bg-azure/10 rounded-full px-5 py-3">
+              <span className="text-base sm:text-lg font-medium text-ink tracking-tight">
+                Ваша комиссия
+              </span>
+              <span className="text-xl sm:text-2xl font-bold text-azure">
+                {Math.round(commissionRate * 100)}%
+              </span>
+              <span className="text-sm text-graphite tracking-tight">
+                с каждого платежа
+              </span>
             </div>
 
             <div className="bg-snow p-6 sm:p-8 rounded-[20px]">
