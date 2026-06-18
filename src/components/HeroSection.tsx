@@ -1,5 +1,4 @@
 import { HandWrittenTitle } from "@/components/ui/hand-writing-text";
-import Icon from "@/components/ui/icon";
 
 const HeroSection = () => {
   return (
@@ -33,14 +32,6 @@ const HeroSection = () => {
           className="inline-flex items-center gap-2 bg-azure text-white text-base sm:text-lg font-medium rounded-full px-7 py-3 hover:opacity-90 transition-opacity duration-200"
         >
           Стать партнёром
-        </a>
-
-        <a
-          href="#value"
-          className="inline-flex items-center justify-center mt-12 text-graphite animate-bounce"
-          aria-label="Прокрутить вниз"
-        >
-          <Icon name="ChevronDown" size={40} />
         </a>
       </div>
     </section>

@@ -24,7 +24,7 @@ function HandWrittenTitle({
   };
 
   return (
-    <div className="relative inline-flex flex-col items-center justify-center px-10 py-12 sm:px-20 sm:py-16 mx-auto">
+    <div className="relative inline-flex flex-col items-center justify-center px-12 py-14 sm:px-32 sm:py-20 mx-auto">
       <div className="absolute inset-0">
         <motion.svg
           width="100%"
