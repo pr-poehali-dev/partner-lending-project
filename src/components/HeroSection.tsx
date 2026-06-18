@@ -26,9 +26,7 @@ const HeroSection = () => {
         />
 
         <a
-          href="https://t.me/poehaliCareers"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#value"
           className="inline-flex items-center gap-2 bg-azure text-white text-base sm:text-lg font-medium rounded-full px-7 py-3 hover:opacity-90 transition-opacity duration-200"
         >
           Стать партнёром
