@@ -24,13 +24,13 @@ function HandWrittenTitle({
   };
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto py-24 flex items-center justify-center">
+    <div className="relative inline-flex flex-col items-center justify-center px-20 py-16 mx-auto">
       <div className="absolute inset-0">
         <motion.svg
           width="100%"
           height="100%"
           viewBox="0 0 1200 600"
-          preserveAspectRatio="xMidYMid meet"
+          preserveAspectRatio="none"
           initial="hidden"
           animate="visible"
           className="w-full h-full"
