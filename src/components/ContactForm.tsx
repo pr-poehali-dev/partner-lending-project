@@ -1,32 +1,27 @@
-import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const ContactForm = () => {
   return (
-    <section className="py-20 px-4 bg-white">
-      <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-5xl font-bold text-gray-900 mb-4">
-          Готовы начать зарабатывать?
-        </h2>
-        <p className="text-xl text-gray-600 mb-10">
-          Присоединяйтесь к партнерской программе в Телеграме прямо сейчас
-        </p>
+    <section className="py-20 sm:py-28 px-6 bg-fog">
+      <div className="max-w-5xl mx-auto">
+        <div className="bg-black rounded-[28px] px-6 py-16 sm:px-12 sm:py-24 text-center">
+          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tighter mb-4">
+            Готовы начать зарабатывать?
+          </h2>
+          <p className="text-lg sm:text-xl text-white/70 mb-10 max-w-xl mx-auto tracking-tight">
+            Присоединяйтесь к партнёрской программе в Телеграме прямо сейчас
+          </p>
 
-        <Button
-          asChild
-          size="lg"
-          className="text-lg px-12 py-6 h-auto bg-primary hover:bg-primary/90 transform hover:scale-105 transition-all duration-200"
-        >
           <a
             href="https://t.me/poehaliCareers"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3"
+            className="inline-flex items-center gap-3 bg-azure text-white text-base sm:text-lg font-medium rounded-full px-8 py-4 hover:opacity-90 transition-opacity duration-200"
           >
-            <Icon name="Send" size={24} />
-            Стать партнером в Телеграм
+            <Icon name="Send" size={22} />
+            Стать партнёром в Телеграм
           </a>
-        </Button>
+        </div>
       </div>
     </section>
   );

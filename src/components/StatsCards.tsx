@@ -1,5 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
-
 const StatsCards = () => {
   const stats = [
     {
@@ -17,23 +15,21 @@ const StatsCards = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section className="py-20 sm:py-28 px-6 bg-fog">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
-            <Card
+            <div
               key={index}
-              className="text-center border-0 shadow-lg bg-white hover:shadow-xl transition-shadow duration-200"
+              className="text-center bg-snow rounded-[28px] p-10 sm:p-12 transition-transform duration-200 hover:-translate-y-1"
             >
-              <CardContent className="p-12">
-                <div className="text-5xl md:text-6xl font-bold text-primary mb-4">
-                  {stat.number}
-                </div>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  {stat.label}
-                </p>
-              </CardContent>
-            </Card>
+              <div className="text-5xl sm:text-6xl font-bold text-azure tracking-tighter mb-4">
+                {stat.number}
+              </div>
+              <p className="text-base sm:text-lg text-graphite leading-relaxed tracking-tight">
+                {stat.label}
+              </p>
+            </div>
           ))}
         </div>
       </div>

@@ -20,29 +20,29 @@ const ValueProp = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section id="value" className="py-20 sm:py-28 px-6 bg-snow">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-5xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl sm:text-5xl font-bold text-ink tracking-tighter mb-4">
           Они создают — вы зарабатываете
         </h2>
-        <p className="text-xl text-gray-600 mb-16 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-graphite mb-12 sm:mb-16 max-w-2xl mx-auto tracking-tight">
           Приводите людей на платформу: они делают сайты и приложения, а вы
           получаете доход с их активности
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {items.map((item, index) => (
             <div
               key={index}
-              className="relative bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-200"
+              className="bg-fog rounded-[28px] p-8 transition-transform duration-200 hover:-translate-y-1"
             >
-              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-azure rounded-[20px] flex items-center justify-center mx-auto mb-6">
                 <Icon name={item.icon} size={28} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+              <h3 className="text-2xl font-semibold text-ink tracking-tight mb-3">
                 {item.title}
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-graphite leading-relaxed tracking-tight">
                 {item.description}
               </p>
             </div>
