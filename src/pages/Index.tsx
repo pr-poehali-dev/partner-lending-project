@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import ValueProp from "@/components/ValueProp";
 import StatsCards from "@/components/StatsCards";
 import IncomeCalculator from "@/components/IncomeCalculator";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -8,6 +9,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
+      <ValueProp />
       <StatsCards />
       <IncomeCalculator />
       <ProcessSteps />
