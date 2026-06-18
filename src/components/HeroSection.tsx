@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { HandWrittenTitle } from "@/components/ui/hand-writing-text";
+import Icon from "@/components/ui/icon";
 
 const HeroSection = () => {
   return (
@@ -21,12 +21,13 @@ const HeroSection = () => {
             </>
           }
         />
-        <Button
-          size="lg"
-          className="text-lg px-12 py-6 h-auto bg-primary hover:bg-primary/90 transform hover:scale-105 transition-all duration-200 mt-8"
+        <a
+          href="#"
+          className="inline-flex items-center justify-center mt-8 text-primary animate-bounce"
+          aria-label="Прокрутить вниз"
         >
-          Получить партнерскую ссылку →
-        </Button>
+          <Icon name="ChevronDown" size={48} />
+        </a>
       </div>
     </section>
   );
