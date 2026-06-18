@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 interface HandWrittenTitleProps {
   title?: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
 }
 
 function HandWrittenTitle({

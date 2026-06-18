@@ -7,7 +7,19 @@ const HeroSection = () => {
       <div className="text-center max-w-4xl mx-auto">
         <HandWrittenTitle
           title="Зарабатывайте больше"
-          subtitle="вместе с poehali.dev"
+          subtitle={
+            <>
+              вместе с{" "}
+              <a
+                href="https://poehali.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-700 hover:underline"
+              >
+                poehali.dev
+              </a>
+            </>
+          }
         />
         <Button
           size="lg"
