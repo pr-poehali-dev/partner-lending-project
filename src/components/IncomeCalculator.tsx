@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 
 const IncomeCalculator = () => {
-  const [clients, setClients] = useState([10]);
+  const [clients, setClients] = useState([1000]);
   const [averageCheck, setAverageCheck] = useState([3000]);
 
   const tiers = [
