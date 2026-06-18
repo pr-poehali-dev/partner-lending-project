@@ -28,7 +28,7 @@ const ProcessSteps = () => {
 
         <div className="grid md:grid-cols-3 gap-12">
           {steps.map((step, index) => (
-            <div key={index} className="text-center">
+            <div key={index} className="text-center relative">
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition-transform duration-200">
                 <Icon name={step.icon} size={32} className="text-white" />
               </div>
@@ -39,7 +39,7 @@ const ProcessSteps = () => {
                 {step.description}
               </p>
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-1/2 transform translate-x-12">
+                <div className="hidden md:block absolute top-7 -right-8 lg:-right-10">
                   <Icon name="ArrowRight" size={24} className="text-gray-400" />
                 </div>
               )}
