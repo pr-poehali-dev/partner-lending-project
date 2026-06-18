@@ -5,12 +5,12 @@ const StatsCards = () => {
       label: "комиссия с платежей",
     },
     {
-      number: "24",
-      label: "месяца получаете доход с клиента",
+      number: "24 мес",
+      label: "доход с клиента",
     },
     {
       number: "5000₽",
-      label: "минимальная выплата каждый месяц",
+      label: "минимальная выплата",
     },
   ];
 
@@ -21,12 +21,12 @@ const StatsCards = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center bg-snow rounded-[28px] p-10 sm:p-12 transition-transform duration-200 hover:-translate-y-1"
+              className="flex flex-col items-center justify-center text-center bg-snow rounded-[28px] p-10 sm:p-12 min-h-[200px] transition-transform duration-200 hover:-translate-y-1"
             >
               <div className="text-5xl sm:text-6xl font-bold text-azure tracking-tighter mb-4">
                 {stat.number}
               </div>
-              <p className="text-base sm:text-lg text-graphite leading-relaxed tracking-tight">
+              <p className="text-base sm:text-lg text-graphite tracking-tight whitespace-nowrap">
                 {stat.label}
               </p>
             </div>
