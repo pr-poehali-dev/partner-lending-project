@@ -4,7 +4,7 @@ import Icon from "@/components/ui/icon";
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-white px-4">
-      <div className="text-center max-w-4xl mx-auto">
+      <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
         <HandWrittenTitle
           title="Зарабатывайте больше"
           subtitle={
