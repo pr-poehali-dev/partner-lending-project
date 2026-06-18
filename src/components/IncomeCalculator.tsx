@@ -5,12 +5,36 @@ const IncomeCalculator = () => {
   const [clients, setClients] = useState([10]);
   const [averageCheck, setAverageCheck] = useState([3000]);
 
-  const commissionRate = 0.15;
-  const monthlyIncome = Math.round(
-    clients[0] * averageCheck[0] * commissionRate,
-  );
+  const tiers = [
+    { upTo: 1000, rate: 0.15 },
+    { upTo: 5000, rate: 0.2 },
+    { upTo: Infinity, rate: 0.25 },
+  ];
+
+  const totalClients = clients[0];
+  const check = averageCheck[0];
+
+  let monthlyIncome = 0;
+  let remaining = totalClients;
+  let prevCap = 0;
+  for (const tier of tiers) {
+    const clientsInTier = Math.max(
+      0,
+      Math.min(totalClients, tier.upTo) - prevCap,
+    );
+    if (clientsInTier <= 0) break;
+    monthlyIncome += clientsInTier * check * tier.rate;
+    remaining -= clientsInTier;
+    prevCap = tier.upTo;
+    if (remaining <= 0) break;
+  }
+  monthlyIncome = Math.round(monthlyIncome);
+
   const yearlyIncome = monthlyIncome * 12;
   const twoYearIncome = Math.round(yearlyIncome * 1.5);
+
+  const currentRate =
+    totalClients > 5000 ? 25 : totalClients > 1000 ? 20 : 15;
 
   return (
     <section className="py-20 sm:py-28 px-6 bg-snow">
@@ -59,16 +83,49 @@ const IncomeCalculator = () => {
               />
             </div>
 
-            <div className="flex items-center justify-center gap-3 bg-azure/10 rounded-full px-5 py-3">
-              <span className="text-base sm:text-lg font-medium text-ink tracking-tight">
-                Ваша комиссия
-              </span>
-              <span className="text-xl sm:text-2xl font-bold text-azure">
-                {Math.round(commissionRate * 100)}%
-              </span>
-              <span className="text-sm text-graphite tracking-tight">
-                с каждого платежа
-              </span>
+            <div className="bg-azure/10 rounded-[20px] p-5 sm:p-6">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="text-base sm:text-lg font-medium text-ink tracking-tight">
+                  Ваша комиссия — до
+                </span>
+                <span className="text-xl sm:text-2xl font-bold text-azure">
+                  25%
+                </span>
+              </div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                {[
+                  { label: "до 1 000", rate: 15, active: currentRate === 15 },
+                  {
+                    label: "1 000–5 000",
+                    rate: 20,
+                    active: currentRate === 20,
+                  },
+                  { label: "от 5 000", rate: 25, active: currentRate === 25 },
+                ].map((tier) => (
+                  <div
+                    key={tier.rate}
+                    className={`rounded-[14px] px-2 py-3 text-center transition-colors duration-200 ${
+                      tier.active
+                        ? "bg-azure text-white"
+                        : "bg-snow text-ink"
+                    }`}
+                  >
+                    <div className="text-lg sm:text-xl font-bold">
+                      {tier.rate}%
+                    </div>
+                    <div
+                      className={`text-xs sm:text-sm tracking-tight ${
+                        tier.active ? "text-white/80" : "text-graphite"
+                      }`}
+                    >
+                      {tier.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-graphite text-center mt-4 tracking-tight">
+                Ставка растёт по мере увеличения числа клиентов
+              </p>
             </div>
 
             <div className="bg-snow p-6 sm:p-8 rounded-[20px]">
